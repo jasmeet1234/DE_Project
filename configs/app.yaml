@@ -1,0 +1,32 @@
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topic: "redset.events"
+
+dataset:
+  source_url: "sample_data/dummy_query_metrics.parquet"
+  event_time_column: "arrival_timestamp"
+  assume_sorted: false
+
+replay:
+  speed_factor: 50
+  sleep_cap_seconds: 2.0
+  batch_size: 1000
+
+storage:
+  duckdb_path: "data/redset.duckdb"
+
+rollups:
+  window_minutes: 5
+
+redshift:
+  enabled: false
+  s3_curated_bucket: ""
+  s3_curated_prefix: "redset/curated"
+  aws_region: "us-east-1"
+  redshift_host: ""
+  redshift_port: 5439
+  redshift_db: ""
+  redshift_user: ""
+  redshift_password: ""
+  redshift_schema: "public"
+  redshift_iam_role: ""
