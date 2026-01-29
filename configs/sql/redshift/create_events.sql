@@ -1,0 +1,1 @@
+-- Placeholder for Redshift table DDL when enabling the loader.
